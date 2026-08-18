@@ -1,44 +1,134 @@
-upskillcampus
-Data Science & Machine Learning Internship
+# Predictive Maintenance of Gearbox Using Vibration Sensors
 
-Predictive Maintenance of Gearbox Using Vibration Sensors
-This project delivers an end-to-end Machine Learning pipeline and interactive analytical dashboard for predicting mechanical gearbox failures (specifically Broken Tooth Faults) using multi-channel time-series vibration sensor data.
+An end-to-end **Machine Learning pipeline and dashboard** for predicting mechanical gearbox failures—specifically **Broken Tooth Faults**—using multi-channel time-series vibration sensor data.
 
-🚀 Key Features
-Multi-Channel Processing: Processes 4-channel high-frequency accelerometer signal data across varying dynamometer operational loads (0% to 90%).
+## 🚀 Key Features
 
-Feature Extraction: Extracts key statistical indicators in the time domain, including Root Mean Square (RMS), Standard Deviation (STD), and Peak-to-Peak (P2P) amplitudes per channel.
+* **Multi-Channel Processing:** Processes 4-channel, high-frequency accelerometer signal data collected under varying dynamometer operational loads from **0% to 90%**.
+* **Feature Extraction:** Extracts statistical features from the time domain, including:
 
-Supervised Classification: Employs a trained Random Forest model (gearbox_model.pkl) to accurately detect Healthy vs. Broken Tooth states.
+  * Root Mean Square (RMS)
+  * Standard Deviation (STD)
+  * Peak-to-Peak (P2P) amplitude
+* **Supervised Classification:** Uses a trained **Random Forest** classifier to distinguish between **Healthy** and **Broken Tooth** gearbox conditions.
+* **Interactive Dashboard:** Provides a Streamlit-based interface for:
 
-Interactive Dashboard: Deploys a Streamlit web interface (app.py) for uploading raw vibration data files, visualizing dynamic signal waveforms, analyzing RMS energy distributions, and receiving instant fault alerts.
+  * Uploading raw vibration data
+  * Visualizing signal waveforms
+  * Analyzing RMS energy distributions
+  * Receiving real-time gearbox fault predictions and alerts
 
-🛠️ Tech Stack
-Language: Python 3.x
+## 🛠️ Tech Stack
 
-Machine Learning & Data Processing: Scikit-Learn, Pandas, NumPy, Joblib
+| Category                 | Technologies         |
+| ------------------------ | -------------------- |
+| **Programming Language** | Python 3.x           |
+| **Data Processing**      | Pandas, NumPy        |
+| **Machine Learning**     | Scikit-learn, Joblib |
+| **Visualization**        | Matplotlib, Seaborn  |
+| **Web Interface**        | Streamlit            |
 
-Visualization & Web Interface: Streamlit, Matplotlib, Seaborn
+## 📂 Project Structure
 
-📂 Project Structure
+```text
 upskillcampus/
-├── app.py                      # Main Streamlit web application dashboard
-├── train_model.py              # Script to process datasets and train the classifier
-├── plot_evaluation.py          # Script for feature importance & model metrics visualization
-├── requirements.txt            # Python dependencies
-├── gearbox_model.pkl           # Trained Random Forest machine learning model
-├── model_features.pkl          # Feature names artifact
-├── confusion_matrix.png        # Model evaluation artifact
-├── feature_importance.png      # Feature importance chart
-├── BrokenTooth Data/           # Vibration data under broken tooth fault conditions
-├── Healthy Data/               # Vibration data under healthy conditions
-└── PredictiveMaintenance_Ananya_USC_UCT.pdf  # Final project report PDF
+│
+├── app.py                         # Main Streamlit dashboard
+├── train_model.py                # Dataset processing and model training
+├── plot_evaluation.py            # Model evaluation and visualization
+├── requirements.txt               # Python dependencies
+│
+├── gearbox_model.pkl              # Trained Random Forest model
+├── model_features.pkl             # Saved model feature names
+├── confusion_matrix.png           # Confusion matrix visualization
+├── feature_importance.png         # Feature importance visualization
+│
+├── BrokenTooth Data/              # Vibration data for broken tooth faults
+├── Healthy Data/                  # Vibration data for healthy gearboxes
+│
+└── PredictiveMaintenance_Ananya_USC_UCT.pdf
+                                   # Final project report
+```
 
-🔧 Installation & Running Locally
-Clone the repository:
-git clone [https://github.com/Ananan-N/upskillcampus.git](https://github.com/Ananan-N/upskillcampus.git)
+## ⚙️ Installation & Running Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Ananan-N/upskillcampus.git
 cd upskillcampus
+```
 
+### 2. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+### 3. Run the Streamlit Application
+
+```bash
 streamlit run app.py
+```
+
+The application will start locally, and Streamlit will provide a URL to open the dashboard in your browser.
+
+## 📊 Model
+
+The project uses a **Random Forest Classifier** trained on statistical features extracted from multi-channel vibration signals.
+
+The model predicts two gearbox conditions:
+
+* **Healthy**
+* **Broken Tooth**
+
+The trained model is stored in:
+
+```text
+gearbox_model.pkl
+```
+
+The corresponding feature names are stored in:
+
+```text
+model_features.pkl
+```
+
+## 📈 Evaluation
+
+The model evaluation artifacts generated during training include:
+
+* **Confusion Matrix:** `confusion_matrix.png`
+* **Feature Importance:** `feature_importance.png`
+
+These visualizations provide insights into the model's classification performance and the contribution of individual vibration features.
+
+## 📁 Dataset
+
+The dataset contains multi-channel vibration measurements recorded under different operational loads.
+
+The project includes data for:
+
+* **Healthy gearbox conditions**
+* **Broken tooth fault conditions**
+
+Data is organized into the following directories:
+
+```text
+BrokenTooth Data/
+Healthy Data/
+```
+
+## 📄 Project Report
+
+The complete project documentation and methodology are available in:
+
+```text
+PredictiveMaintenance_Ananya_USC_UCT.pdf
+```
+
+## 👩‍💻 Author
+
+**Ananya**
+
+Developed as part of the **UpskillCampus Data Science & Machine Learning Internship**.
