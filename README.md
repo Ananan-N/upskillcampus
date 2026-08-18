@@ -118,6 +118,11 @@ Data is organized into the following directories:
 BrokenTooth Data/
 Healthy Data/
 ```
+Due to GitHub file size limitations, the raw vibration data files (`BrokenTooth Data` and `Healthy Data`) are hosted externally.
+
+- **[Download Dataset](https://drive.google.com/file/d/1nNNnjMPntlo5X0t_cif7cmlJhikCyWyP/view)**
+
+To run the training scripts locally, download the dataset and place the `BrokenTooth Data/` and `Healthy Data/` folders in the root directory of this repository.
 
 ## 📄 Project Report
 
